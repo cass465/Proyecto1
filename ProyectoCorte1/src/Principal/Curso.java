@@ -68,6 +68,7 @@ public class Curso {
                     crearIntegrante(estudiantes, docentes, integrantes, materias);
                     break;
                 case 3:
+                    eliminarIntegranteCurso(integrantes);
                     break;
                 case 4:
                     break;
