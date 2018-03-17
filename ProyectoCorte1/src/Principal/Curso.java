@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package Principal;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
+
 /**
  * Esta clase contiene el curso creado con los objetos
  *
@@ -55,13 +62,13 @@ public class Curso {
             opcion = leer.nextByte();
             switch (opcion) {
                 case 1:
-                    
+                    archivando(integrantes);
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
                     break;
@@ -82,4 +89,31 @@ public class Curso {
         } while (opcion != 0);
     }
 
+    /**
+     * Archivar los datos al disco duro y recuperarlos para imprimir en consola
+     *
+     * @param integrantes
+     * @throws ClassNotFoundException
+     */
+    public void archivando(IntegranteCurso[] integrantes) throws ClassNotFoundException {
+        try {
+            try (ObjectOutputStream escritura = new ObjectOutputStream(new FileOutputStream("curso.txt"))) {
+                escritura.writeObject(integrantes);
+                escritura.close();
+            }
+            try (ObjectInputStream lectura = new ObjectInputStream(new FileInputStream("curso.txt"))) {
+                IntegranteCurso integrantesEscritura[] = (IntegranteCurso[]) lectura.readObject();
+                lectura.close();
+
+                for (int i = 0; i < integrantesEscritura.length; i++) {
+                    if (integrantesEscritura[i] != null) {
+                        System.out.println((i + 1) + ". " + integrantesEscritura[i]);
+                    }
+                }
+            }
+
+        } catch (IOException e) {
+
+        }
+    }
 }
