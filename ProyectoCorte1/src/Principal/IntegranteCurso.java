@@ -32,6 +32,23 @@ public class IntegranteCurso implements Serializable {
         this.apellido = apellido;
         this.codigo = codigo;
     }
+    /**
+     * Obtener nombre del integrante del curso
+     *
+     * @return String
+     */
+    public String getNombre(){
+        return nombre;
+    }
+
+    /**
+     * Obtener apellido del integrante del curso
+     *
+     * @return String
+     */
+    public String getApellido(){
+        return apellido;
+    }
 
     /**
      * Metodo toString

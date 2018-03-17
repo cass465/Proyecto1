@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -71,6 +72,7 @@ public class Curso {
                     eliminarIntegranteCurso(integrantes);
                     break;
                 case 4:
+                    verMateriasDocentes( docentes);
                     break;
                 case 5:
                     break;
@@ -230,5 +232,17 @@ public class Curso {
         System.out.println("INTEGRANTE DE CURSO ELIMINADO CON EXITO");
         System.out.println("---------------------------------------");
         archivando(integrantes);
+    }
+    /**
+     * Ver las materias que dictan los docentes
+     *
+     * @param docentes
+     */
+    public void verMateriasDocentes(Docente[] docentes) {
+        for (Docente docente : docentes) {
+            if (docente != null) {
+                System.out.println(docente.getNombre() + " " + docente.getApellido() + " " + Arrays.toString(docente.getMaterias()));
+            }
+        }
     }
 }

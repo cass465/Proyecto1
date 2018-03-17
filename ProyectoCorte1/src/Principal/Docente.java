@@ -28,5 +28,34 @@ public class Docente extends IntegranteCurso {
         super(tipoIntegrante, nombre, apellido, codigo);
         this.materias = materias;
     }
+    
+    /**
+     * Obtener nombre del docente
+     *
+     * @return String
+     */
+    @Override
+    public String getNombre() {
+        return super.getNombre();
+    }
+
+    /**
+     * Obtener apellido del docente
+     *
+     * @return String
+     */
+    @Override
+    public String getApellido() {
+        return super.getApellido();
+    }
+
+    /**
+     * Obtener el array de materias que dicta el docente
+     *
+     * @return String[]
+     */
+    public String[] getMaterias() {
+        return materias;
+    }
 
 }
