@@ -65,10 +65,9 @@ public class Curso {
                     archivando(integrantes);
                     break;
                 case 2:
-                      crearIntegrante(estudiantes, docentes, integrantes, materias);
+                    crearIntegrante(estudiantes, docentes, integrantes, materias);
                     break;
                 case 3:
-
                     break;
                 case 4:
                     break;
@@ -116,7 +115,16 @@ public class Curso {
 
         }
     }
-   public void crearIntegrante(Estudiante[] estudiantes, Docente[] docentes, IntegranteCurso[] integrantes, String[] materias) {
+
+    /**
+     * Crear integrante del curso ya sea estudiante o docente
+     *
+     * @param estudiantes
+     * @param docentes
+     * @param integrantes
+     * @param materias
+     */
+    public void crearIntegrante(Estudiante[] estudiantes, Docente[] docentes, IntegranteCurso[] integrantes, String[] materias) {
 
         Scanner leer = new Scanner(System.in);
         byte opcion;
@@ -203,5 +211,5 @@ public class Curso {
                 System.out.println("--OPCION INVALIDA--");
         }
 
-    } 
+    }
 }
