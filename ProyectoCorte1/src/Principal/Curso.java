@@ -212,4 +212,22 @@ public class Curso {
         }
 
     }
+    /**
+     * Eliminar estudiantes o docentes
+     *
+     * @param integrantes
+     * @throws ClassNotFoundException
+     */
+    public void eliminarIntegranteCurso(IntegranteCurso[] integrantes) throws ClassNotFoundException {
+        Scanner leer = new Scanner(System.in);
+        byte eliminar;
+        System.out.println("--ESCOJA A QUIEN DESEA ELIMINAR--");
+        archivando(integrantes);
+        eliminar = leer.nextByte();
+        integrantes[eliminar - 1] = null;
+        System.out.println("---------------------------------------");
+        System.out.println("INTEGRANTE DE CURSO ELIMINADO CON EXITO");
+        System.out.println("---------------------------------------");
+        archivando(integrantes);
+    }
 }
