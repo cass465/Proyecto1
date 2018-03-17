@@ -65,7 +65,7 @@ public class Curso {
                     archivando(integrantes);
                     break;
                 case 2:
-
+                      crearIntegrante(estudiantes, docentes, integrantes, materias);
                     break;
                 case 3:
 
@@ -116,4 +116,92 @@ public class Curso {
 
         }
     }
+   public void crearIntegrante(Estudiante[] estudiantes, Docente[] docentes, IntegranteCurso[] integrantes, String[] materias) {
+
+        Scanner leer = new Scanner(System.in);
+        byte opcion;
+        String nombre;
+        String apellido;
+        long codigo;
+        byte cupoEstudiantes = 0;
+        byte cupoDocentes = 0;
+        String materiasIndefinidas[] = {"MATERIA INDEFINIDA"};
+        System.out.println("QUE TIPO DE ROL DESEA CREAR");
+        System.out.println("1. ESTUDIANTE");
+        System.out.println("2. DOCENTE");
+        opcion = leer.nextByte();
+        switch (opcion) {
+            case 1:
+                for (int i = 0; i < 15; i++) {
+                    if (estudiantes[i] != null) {
+                        cupoEstudiantes++;
+                    }
+
+                }
+                if (cupoEstudiantes < 15) {
+                    for (int i = 0; i < 15; i++) {
+                        if (estudiantes[i] == null) {
+                            System.out.print("INGRESE EL NOMBRE DEL ESTUDIANTE: ");
+                            nombre = leer.nextLine();
+                            nombre = leer.nextLine();
+                            System.out.print("INGRESE EL APELLIDO DEL ESTUDIANTE: ");
+                            apellido = leer.nextLine();
+                            System.out.print("INGRESE EL CODIGO DEL ESTUDIANTE: ");
+                            codigo = leer.nextLong();
+                            estudiantes[i] = new Estudiante(materias, "ESTUDIANTE", nombre.toUpperCase(), apellido.toUpperCase(), codigo);
+                            for (int j = 0; j < 15; j++) {
+                                if (integrantes[j] == null) {
+                                    integrantes[j] = estudiantes[i];
+                                    j = 15;
+                                }
+
+                            }
+                            i = 15;
+                        }
+                    }
+                } else {
+                    System.out.println("-------------------------------------------------");
+                    System.out.println("EL CUPO DE ESTUDIANTES PARA ESTE CURSO ESTA LLENO");
+                    System.out.println("-------------------------------------------------");
+                }
+                break;
+            case 2:
+                for (int i = 0; i < 5; i++) {
+                    if (docentes[i] != null) {
+                        cupoDocentes++;
+                    }
+
+                }
+                if (cupoDocentes < 5) {
+                    for (int i = 0; i < 5; i++) {
+                        if (docentes[i] == null) {
+                            System.out.print("INGRESE EL NOMBRE DEL DOCENTE: ");
+                            nombre = leer.nextLine();
+                            nombre = leer.nextLine();
+                            System.out.print("INGRESE EL APELLIDO DEL DOCENTE: ");
+                            apellido = leer.nextLine();
+                            System.out.print("INGRESE EL CODIGO DEL DOCENTE: ");
+                            codigo = leer.nextLong();
+                            docentes[i] = new Docente(materiasIndefinidas, "DOCENTE", nombre.toUpperCase(), apellido.toUpperCase(), codigo);
+                            for (int j = 0; j < 5; j++) {
+                                if (integrantes[j] == null) {
+                                    integrantes[j] = docentes[i];
+                                    j = 5;
+                                }
+
+                            }
+                            i = 5;
+                        }
+                    }
+                } else {
+                    System.out.println("----------------------------------------------");
+                    System.out.println("EL CUPO DE DOCENTES PARA ESTE CURSO ESTA LLENO");
+                    System.out.println("----------------------------------------------");
+                }
+                break;
+            default:
+                System.out.println("--OPCION INVALIDA--");
+        }
+
+    } 
 }
