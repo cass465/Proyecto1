@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Principal;
-
+import java.util.Scanner;
 /**
  * Esta clase contiene el curso creado con los objetos
  *
@@ -40,7 +40,46 @@ public class Curso {
         docentes[3] = new Docente(doc4, "DOCENTE", "BLANCA CECILIA", "VARGAS ROJAS", 3612171);
         System.arraycopy(estudiantes, 0, integrantes, 0, 7); //asignar el arreglo de estudiantes a los integrantes del curso
         System.arraycopy(docentes, 0, integrantes, 7, 4); //asignar el arreglo de docentes a los integrantes del curso
-
+        Scanner leer = new Scanner(System.in);
+        byte opcion;
+        do {
+            System.out.println("INGRESE UNA OPCION");
+            System.out.println("1. VER ARCHIVO");
+            System.out.println("2. CREAR INTEGRANTE (ESTUDIANTE / DOCENTE)");
+            System.out.println("3. ELIMINAR INTEGRANTE (ESTUDIANTE / DOCENTE)");
+            System.out.println("4. VER MATERIAS DE LOS DOCENTES");
+            System.out.println("5. VER LISTADO GENERAL");
+            System.out.println("6. VER MEJORES PROMEDIOS");
+            System.out.println("7. ASIGNAR NOTAS");
+            System.out.println("0. SALIR");
+            opcion = leer.nextByte();
+            switch (opcion) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 0:
+                    System.out.println("-------------------------");
+                    System.out.println("EL PROGRAMA HA FINALIZADO");
+                    System.out.println("-------------------------");
+                    break;
+                default:
+                    System.out.println("--OPCION INVALIDA--");
+            }
+        } while (opcion != 0);
     }
 
 }
