@@ -72,7 +72,7 @@ public class Curso {
                     eliminarIntegranteCurso(integrantes);
                     break;
                 case 4:
-                    verMateriasDocentes( docentes);
+                    verMateriasDocentes(docentes);
                     break;
                 case 5:
                     break;
@@ -160,10 +160,10 @@ public class Curso {
                             System.out.print("INGRESE EL CODIGO DEL ESTUDIANTE: ");
                             codigo = leer.nextLong();
                             estudiantes[i] = new Estudiante(materias, "ESTUDIANTE", nombre.toUpperCase(), apellido.toUpperCase(), codigo);
-                            for (int j = 0; j < 15; j++) {
+                            for (int j = 0; j < 20; j++) {
                                 if (integrantes[j] == null) {
                                     integrantes[j] = estudiantes[i];
-                                    j = 15;
+                                    j = 20;
                                 }
 
                             }
@@ -194,10 +194,10 @@ public class Curso {
                             System.out.print("INGRESE EL CODIGO DEL DOCENTE: ");
                             codigo = leer.nextLong();
                             docentes[i] = new Docente(materiasIndefinidas, "DOCENTE", nombre.toUpperCase(), apellido.toUpperCase(), codigo);
-                            for (int j = 0; j < 5; j++) {
+                            for (int j = 0; j < 20; j++) {
                                 if (integrantes[j] == null) {
                                     integrantes[j] = docentes[i];
-                                    j = 5;
+                                    j = 20;
                                 }
 
                             }
@@ -215,6 +215,7 @@ public class Curso {
         }
 
     }
+
     /**
      * Eliminar estudiantes o docentes
      *
@@ -233,6 +234,7 @@ public class Curso {
         System.out.println("---------------------------------------");
         archivando(integrantes);
     }
+
     /**
      * Ver las materias que dictan los docentes
      *

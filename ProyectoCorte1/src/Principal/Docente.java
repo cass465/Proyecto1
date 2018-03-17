@@ -28,7 +28,7 @@ public class Docente extends IntegranteCurso {
         super(tipoIntegrante, nombre, apellido, codigo);
         this.materias = materias;
     }
-    
+
     /**
      * Obtener nombre del docente
      *

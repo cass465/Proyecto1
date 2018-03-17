@@ -32,12 +32,13 @@ public class IntegranteCurso implements Serializable {
         this.apellido = apellido;
         this.codigo = codigo;
     }
+
     /**
      * Obtener nombre del integrante del curso
      *
      * @return String
      */
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
@@ -46,15 +47,10 @@ public class IntegranteCurso implements Serializable {
      *
      * @return String
      */
-    public String getApellido(){
+    public String getApellido() {
         return apellido;
     }
 
-    /**
-     * Metodo toString
-     *
-     * @return String
-     */
     @Override
     public String toString() {
         return tipoIntegrante + " " + nombre + " " + apellido + " " + codigo;
